@@ -41,7 +41,7 @@ const welcomescreen = () => {
           marginBottom: 10,
           fontSize: 17,
           textAlign: "center",
-          marginTop: 20,
+          marginTop: 21,
         }}
       >
         With our user-friendly system, you can now make your bill payments
