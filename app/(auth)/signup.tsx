@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import { Modal } from "react-native";
-import { FlatList } from "react-native";
 import {
   SafeAreaView,
   StyleSheet,
@@ -25,8 +23,8 @@ const genders = ["Male", "Female"];
 const signup = () => {
   const [isChecked, setChecked] = useState(false);
   const [isPasswordVisible, setPasswordVisible] = useState(false);
-  const [selectedGender, setSelectedGender] = useState("");
   const [genderModalVisible, setGenderModalVisible] = useState(false);
+  const [selectedGender, setSelectedGender] = useState("");
   const bottomSheetRef = useRef<BottomSheetModal | null>(null);
 
   const toggleCheckbox = () => {

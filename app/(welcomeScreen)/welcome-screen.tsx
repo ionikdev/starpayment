@@ -1,25 +1,49 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import LottieView from "lottie-react-native";
 
 const welcomescreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
+
+      <LottieView
+        autoPlay
+        loop={true}
+        speed={1}
+        style={{
+          width: 350,
+          height: 350,
+        }}
+        source={require("../../assets/lottie/firstscreen.json")}
+      />
       <View
         style={{
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: "center",
+
           marginBottom: 10,
         }}
       >
-        <Text style={{ fontSize:30}}>Make your </Text>
-        <Text style={{fontSize:20}}>bill payments easily  </Text>
+        <View style={{ flexDirection: "row" }}>
+          <Text style={{ fontSize: 25, fontWeight: "800" }}>Make your </Text>
+          <Text style={{ fontSize: 22, fontStyle: "italic" }}>
+            bill payments easily{" "}
+          </Text>
+        </View>
       </View>
-      <Text style={{ marginBottom: 100, fontSize:20,marginTop:20 }}>
+
+      <Text
+        style={{
+          marginBottom: 10,
+          fontSize: 17,
+          textAlign: "center",
+          marginTop: 20,
+        }}
+      >
         With our user-friendly system, you can now make your bill payments
         easily and efficiently.
       </Text>

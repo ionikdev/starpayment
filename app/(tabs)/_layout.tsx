@@ -141,15 +141,21 @@ export default function TabLayout() {
               iconLibrary="EvilIcons"
             />
           ),
-          headerTitle: "",
           headerTransparent: true,
-
+          headerTitle: "",
           headerLeft: () => (
             <View
               style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
             >
-              <Text style={{ fontSize: 18, fontWeight: "700", marginLeft: 15 }}>
-                Reward
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: "#ffffff",
+                  fontWeight: "bold",
+                  marginLeft: 15,
+                }}
+              >
+                Profile
               </Text>
             </View>
           ),
@@ -165,7 +171,7 @@ export default function TabLayout() {
                       marginRight: 15,
                       opacity: pressed ? 0.5 : 1,
                     }}
-                    source={require("../../assets/images/dashboard/notification.png")}
+                    source={require("../../assets/images/profile/notification.png")}
                   />
                 )}
               </Pressable>

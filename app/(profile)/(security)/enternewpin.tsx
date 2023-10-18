@@ -68,14 +68,14 @@ const SetPinConfirmation = () => {
           <View style={styles.circle}>
             <Image
               style={styles.image}
-              source={require("../../assets/images/auth/secret.png")}
+              source={require("../../../assets/images/auth/secret.png")}
             />
           </View>
-          <Text style={styles.verifyText}>Confirm your PIN</Text>
+          <Text style={styles.verifyText}>Enter new PIN</Text>
         </View>
         <Text style={styles.descriptionText}>
-          Set a 4-digit PIN to authorize your transactions and login to your
-          account.
+          Retype your pin to authorize your transactions and also to login to
+          your account.
         </Text>
         <View style={styles.pinInputContainer}>
           {pin.map((digit, index) => (
@@ -122,9 +122,9 @@ const SetPinConfirmation = () => {
                 </Animatable.View>
               </Animatable.View>
             </View>
-            <Text style={styles.modalText}>Sign up successful!</Text>
+            <Text style={styles.modalText}>Change Pin successful!</Text>
             <Text style={styles.modalSubText}>
-              Your account has been successfully created.
+              Your Pin has been Changed successfully .
             </Text>
             <Link href="/dashboard" asChild>
               <TouchableOpacity style={styles.bottomButtonReset}>
@@ -261,13 +261,13 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: "#EEE1FF", // Adjust the background color as needed
+    backgroundColor: "#EEE1FF",
     alignItems: "center",
     justifyContent: "center",
   },
   checkmarkText: {
     fontSize: 36,
-    color: "#8140CF", // Adjust the text color as needed
+    color: "#8140CF",
   },
 });
 

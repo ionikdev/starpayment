@@ -3,17 +3,49 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 
 const actions = [
-  { label: "Airtime/Data", icon: require("../../assets/icons/airtime.png") },
-  { label: "Internet", icon: require("../../assets/icons/internet.png") },
-  { label: "Book Flight", icon: require("../../assets/icons/flight.png") },
-  { label: "Cable TV", icon: require("../../assets/icons/cable_tv.png") },
-  { label: "Electricity", icon: require("../../assets/icons/electricity.png") },
-  { label: "Education", icon: require("../../assets/icons/education.png") },
-  { label: "Buy Giftcard", icon: require("../../assets/icons/giftcard.png") },
-  { label: "Betting", icon: require("../../assets/icons/betting.png") },
+  {
+    label: "Airtime/Data",
+    icon: require("../../assets/icons/airtime.png"),
+    route: "/airtime-data",
+  },
+  {
+    label: "Internet",
+    icon: require("../../assets/icons/internet.png"),
+    route: "/internet",
+  },
+  {
+    label: "Book Flight",
+    icon: require("../../assets/icons/flight.png"),
+    route: "/airtime-data",
+  },
+  {
+    label: "Cable TV",
+    icon: require("../../assets/icons/cable_tv.png"),
+    route: "/cable-tv",
+  },
+  {
+    label: "Electricity",
+    icon: require("../../assets/icons/electricity.png"),
+    route: "/electricity",
+  },
+  {
+    label: "Education",
+    icon: require("../../assets/icons/education.png"),
+    route: "/electricity",
+  },
+  {
+    label: "Buy Giftcard",
+    icon: require("../../assets/icons/giftcard.png"),
+    route: "/electricity",
+  },
+  {
+    label: "Betting",
+    icon: require("../../assets/icons/betting.png"),
+    route: "/electricity",
+  },
 ];
 
 export default function TabOneScreen() {
@@ -64,12 +96,27 @@ export default function TabOneScreen() {
         <View style={styles.quickActions}>
           <Text style={styles.Title}>Quick actions</Text>
           <View style={styles.actionsContainer}>
-            {actions.map((action, index) => (
-              <View key={index} style={styles.actionItem}>
-                <Image style={styles.actionIcon} source={action.icon} />
-                <Text style={styles.actionLabel}>{action.label}</Text>
-              </View>
-            ))}
+            {actions.map((action, index) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    if (action.route) {
+                      router.push(action.route as any);
+                    } else {
+                      console.warn(
+                        "Route is undefined for action: ",
+                        action.label
+                      );
+                    }
+                  }}
+                  key={index}
+                  style={styles.actionItem}
+                >
+                  <Image style={styles.actionIcon} source={action.icon} />
+                  <Text style={styles.actionLabel}>{action.label}</Text>
+                </TouchableOpacity>
+              );
+            })}
           </View>
         </View>
 
