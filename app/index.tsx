@@ -26,12 +26,12 @@ const AuthHandler = () => {
 
   useEffect(() => {
     if (!isLoading) {
-      // Once loading is complete, perform navigation
+      
       if (isAuthenticated) {
-        // Navigate to dashboard if authenticated
+       
         router.push("/dashboard");
       } else {
-        // Navigate to welcome screen if not authenticated
+      
         router.push("/welcome-screen");
       }
     }
